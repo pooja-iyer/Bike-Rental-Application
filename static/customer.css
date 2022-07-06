@@ -1,0 +1,25 @@
+svg{
+  width:200px;
+  height:120px;
+  
+}
+.user_details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-details{
+    background-color: darkblue;
+    border: none;
+    color: white;
+    padding: 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    color:white;
+    border-radius: 50%;
+    width: 200px;
+    height: 120px;
+  }
