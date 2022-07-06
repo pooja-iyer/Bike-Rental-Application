@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title> Monthly canvas report </title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheet.css') }}"/>
+    </head>
+    <script src="{{ url_for('static',filename='chart.js') }}"></script>
+    <body>
+        <div class="canvas_style"> 
+            <canvas id="myChart" />
+            <script>
+                var barColors = 'rgba(255, 159, 64, 0.2)';
+                var barborder = 'rgb(255, 159, 64)';
+                new Chart("myChart", {
+                            type: "bar",
+                            data: {
+                            labels: ["1-10","11-20","21-31"],
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: [{% for item in labelvalue %}
+                                           {{labelvalue[item]}},
+                                           {% endfor %}],
+                                borderColor: barborder,
+                                borderWidth: 1
+                            }]
+                        },
+                    options: {
+                        legend: {display: false},
+                        title: {
+                            display: true,
+                            text: "Monthly Bike Rentals"
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>

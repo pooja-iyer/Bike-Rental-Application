@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/profile.css') }}">
+</head>
+<body>
+            <div>
+                <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12 profile-top">
+                                <div class="profile text-center text-white">
+                                    <div class="m-b-25"> <img src="{{url_for('static',filename = 'profile.png')}}" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h6 class="profile_details">{{session["Name"]}}</h6>
+                                    {% block content %}
+                                    {% if session["is_premium"] == 1 %}
+                                    <p class= "premium">Premium</p> 
+                                    {% else %}
+                                    <a  href="{{ url_for('subscribe') }}" class = "subscribe">Subscribe</a> 
+                                    {% endif %}
+                                    {% endblock content %}
+                                    <br />
+                                    <a  href="{{ url_for('topUp') }}">
+                                    <button type="button" class="btn btn-warning">Top Up</button>
+                                    </a>
+                                    <a  href="{{ url_for('C_home') }}">
+                                    <button type="button" class="btn btn-danger" >Back to homepage</button>
+                                    </a>
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="profile">
+    
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <h6 class="m-b-10 f-w-600">Email</h6>
+                                            <h6 class="text-muted f-w-400">{{session['Email']}}</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <h6 class="m-b-10 f-w-600">Phone</h6>
+                                            <h6 class="text-muted f-w-400">{{session['Phone']}}</h6>
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Address</h6>
+                                    <h6 class="text-muted f-w-400">{{session['Addresscode']}}</h6>
+                                   <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600"></p>
+                                            <h6 class="text-muted f-w-400"></h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p class="m-b-10 f-w-600"></p>
+                                            <h6 class="text-muted f-w-400"></h6>
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Card Details</h6>
+                                    <div class="row">
+   
+                                        <div class="col-sm-6">
+                                    <h6 class="text-muted f-w-400">                                 
+                                          {{session['card']}}</h6>
+                                        </div>
+                                        
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                
+                            
+                                <h2 class="m-b-20 p-b-5 b-b-default f-w-600">Balance</h2><h2 class=" m-b-20 f-w-600">£ {{session['balance']}} </h2>
+
+
+                        </div>
+                    
+                </div>
+            </div>
+       
+
+
+</body>

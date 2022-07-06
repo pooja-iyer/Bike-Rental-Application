@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/profile.css') }}">
+</head>
+<body>
+            <div>
+                <div class="col-sm-12">
+                        <div class="row m-b-25">
+                            <div class="col-sm-12 profile-top">
+                                <div class="profile text-white">
+                                    <div class = "main-title col-sm-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+  
+                                        <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+                                    
+                                          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                                            
+                                            <!-- We only want horizontal blurring. x: 100, y: 0 -->
+                                         
+                                            
+                                              <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                                          </filter>
+                                      </svg>
+                                      
+                                      <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+                                      
+                                      <span filter-content="S" class = "title">TryCycle</span>
+                                </div>
+                                <div class = "header-contents col-sm-1">
+                                       <a href="{{ url_for('user') }}"> Profile</a>
+                                    </div>
+                                    <div class = "header-contents col-sm-1">
+                                        <div class = "col-sm-6">
+                                           <a href="{{ url_for('logout') }}"> Logout</a>
+                                           </div>
+                                        </div>
+                                </div>
+                            </div>
+                            
+                          
+
+
+                        </div>
+                        <div class = "row fields">
+                        <div class = "col-sm-6">
+                            <form action="{{ url_for('moveaction') }}" method = "post">
+                                <label for="Pickup" class="form-label">Enter your goal station postcode</label>
+                                <input type="text" id="pickup" name="postcoode" placeholder="The postcode in your location" class="form-control m-b-25" required
+                                minlength="1">
+                            
+                                <input type="submit" value="Submit" class = "btn btn-primary">
+                              </form>   
+                                  
+                    
+                </div>
+                </div>
+                </div>
+            </div>
+       
+
+
+</body>

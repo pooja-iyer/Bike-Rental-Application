@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title> Monthly rentals report </title> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheet.css') }}"/>
+    </head>
+    <script src="{{ url_for('static',filename='chart.js') }}"></script>
+    <body>
+        <div class="main_header">
+        <div class = "row header-manager">
+          <div class="profile text-white">
+            <div  class = "main-title col-sm-3">
+            <svg xmlns="http://www.w3.org/2000/svg">
+
+                  <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                  
+                      <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                  </filter>
+              </svg>
+           
+              <span filter-content="S" class = "title">TryCycle</span>
+       
+            </div>
+            <p class="textStyle col-sm-6"> Monthly Rentals</p>
+            
+           <div class = "header-contents col-sm-1">
+                  <a href="{{ url_for('index') }}"> Logout</a>
+               </div>
+        </div>
+        </div>
+        <div>
+            <form action="{{ url_for('monthly_rental_display') }}" method = "post"> 
+            <select class="usernameStyle" name="Month" label="Month" style="width:30%;">
+                <option value="None">Select a Month </option>
+                <option value="Jan"> January</option>
+                <option value="Feb"> February </option>
+                <option value="Mar"> March</option>
+                <option value="Apr"> April </option>
+                <option value="May"> May</option>
+                <option value="Jun"> June </option>
+                <option value="Jul"> July</option>
+                <option value="Aug"> August </option>
+                <option value="Sep"> September</option>
+                <option value="Oct"> October </option>
+                <option value="Nov"> November</option>
+                <option value="Dec"> December </option>
+            </select>
+            <select class="usernameStyle" name="Year" label="Year" style="width:30%;">
+                <option value="None">Select a Year </option>
+                <option value="2021"> 2021</option>
+                <option value="2022"> 2022 </option>
+            </select>&nbsp;&nbsp;
+            <input type="submit" value="Fetch" class="submit_upgrade" style="width:18%;"/>
+           </form></div> 
+           
+          <!-- <iframe src="monthly_canvas.html" /> -->
+       
+        <div class="canvas_style"> 
+            <canvas id="myChart" />
+            <script>
+               
+                var barColors = 'rgba(255, 159, 64, 0.2)';
+                var barborder = 'rgb(255, 159, 64)';
+                new Chart("myChart", {
+                            type: "bar",
+                            data: {
+                            labels: ["1-10","11-20","21-31"],
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: [{% for item in labelvalue %}
+                                           {{labelvalue[item]}},
+                                           {% endfor %}],
+                                borderColor: barborder,
+                                borderWidth: 1
+                            }]
+                        },
+                    options: {
+                        legend: {display: false},
+                        title: {
+                            display: true,
+                            text: "Monthly Bike Rentals"
+                        },
+                        responsive: true,
+                        scales: {
+                            xAxes: [ {
+                                  display: true,
+                                  scaleLabel: {
+                                    display: true,
+                                    labelString: "Date Range"
+                                  }
+                                } ],
+                            yAxes: [ {
+                              display: true,
+                              scaleLabel: {
+                                display: true,
+                                labelString: "Number of rentals"
+                              },
+                              ticks: {
+                                beginAtZero: true,
+                                stepValue: 5,
+                            }
+                            } ]
+                        }
+                    }
+                });
+            </script>
+        </div> 
+        <a href="{{ url_for('M_home') }}">
+            <input type="submit" value="Back" class="submit" />
+        </a>
+    </body>
+</html>

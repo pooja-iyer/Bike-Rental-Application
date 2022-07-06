@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title> Manager home </title> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheet.css') }}"/>
+    </head>
+    <body>
+    <div class="main_header">
+         <div class = "row header-manager">
+          <div class="profile text-white">
+            <div  class = "main-title col-sm-3">
+            <svg xmlns="http://www.w3.org/2000/svg">
+
+                  <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                  
+                      <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                  </filter>
+              </svg>
+           
+              <span filter-content="S" class = "title">TryCycle</span>
+       
+            </div>
+            <p class="textStyle col-sm-6"> Perfomance Reports</p>
+            
+           <div class = "header-contents col-sm-1">
+                  <a href="{{ url_for('index') }}"> Logout</a>
+               </div>
+        </div>
+        </div>
+        </div>
+        <div class="tile_layout">
+          <a href="{{ url_for('monthly_rental') }}">  <h2 class="innerFont">Monthly Rentals</h2> </a>
+        </div>
+        <div class="tile_layout">
+          <a href="{{ url_for('defects_report') }}">  <h2 class="innerFont">Defects Report</h2> </a>
+        </div>
+        <div class="tile_layout">
+          <a href="{{ url_for('Premium_User') }}">  <h2 class="innerFont"> Premium users Report</h2> </a>
+        </div>
+    </body>
+</html>

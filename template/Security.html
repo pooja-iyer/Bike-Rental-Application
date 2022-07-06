@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title> New User </title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            </head>
+   
+    <body style="display: flex;justify-content: center;">
+        <div class = "row" style="width: 900px;">
+        <div class = "col-sm-12">
+        
+        <form action="/set_password/" method="post">
+            <p class="loginStyle" align = "center" style = "padding-right: 110px;">Security Questions</p>
+            <br />
+            <br />
+              <input class="usernameStyle" type="text" name="user_id" align="center" placeholder="Enter your User ID"/>
+            <select class="usernameStyle" name="Secret_Question" label="Secret Question">
+                <option value="None">Select a Secret Question </option>
+                <option value="1"> What's your First pet name?</option>
+                <option value="2"> What's your best Friend's name? </option>
+            </select>
+            <br />
+            <br />
+            <input class="usernameStyle" type="text" name="secret_answer" align="center" placeholder="Answer"/>
+           
+            <input type="submit" value="Submit" class="submit">   
+        </form>
+        
+    </div>
+        </div>
+    </body>
+</html>

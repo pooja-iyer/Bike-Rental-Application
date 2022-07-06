@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/profile.css') }}">
+</head>
+<body>
+            <div>
+                <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12 profile-top  m-b-25">
+                                <div class="profile text-white">
+                                    <a href = "{{url_for('home_user')}}" class = "main-title col-sm-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                                           
+                                              <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                                          </filter>
+                                      </svg>
+                                     
+                                      <span filter-content="S" class = "title">TryCycle</span>
+                                  
+                                    </a>
+                                <div class = "header-contents col-sm-1">
+                                       <a href="{{ url_for('user') }}"> Profile</a>
+                                    </div>
+                                    <div class = "header-contents col-sm-1">
+                                        <div class = "col-sm-6">
+                                           <a href="{{ url_for('subscribe') }}"> Logout</a>
+                                           </div>
+                                        </div>
+                                </div>
+                            </div>
+                            
+                          
+
+
+                        </div>
+                           
+                        <a href="{{ url_for('report') }}" class="btn btn-primary">Back</a> 
+                        <div class = "row home">
+                        
+                            <div class = "col-12">
+                                <h4 class = "p-l-40">Following are available at your location </h4>
+                                </div>
+                            <div class = "list-card">
+                                <br />
+                            {%for i in range(0, tot)%}
+                            <form action="{{ url_for('reportBike') }}" method = "post"> 
+                            <div class = "m-b-25 bike-list">
+                                <p class = "bike_id" id = "bike_id" >{{data[i]['BIKE_ID']}}</p>
+                                <input type="hidden" name="bike_id" value="{{data[i]['BIKE_ID']}}">
+                                <textarea id="comments" name="comments" rows="5" cols="40">
+                                  
+                                </textarea>
+
+                                <select name="bikeparts" id="bikeparts">
+                                    <option value="1">Brakes</option>
+                                    <option value="2">Head Light</option>
+                                    <option value="3">Tires</option>
+                                    <option value="4">Seat</option>
+                                    <option value="5">Handle</option>
+                                   
+                                </select>
+
+                                <input type="submit" value="Report" class = "btn btn-primary report">
+                                </div>
+                                <hr />
+                                </form>
+                            {%endfor%}  
+                        </div>                
+                            </div>
+                        </div> 
+                                                                    
+                                  
+                    
+                </div>
+                </div>
+            </div>
+       
+
+
+</body>

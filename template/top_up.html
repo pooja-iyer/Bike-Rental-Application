@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title> Top-up </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheet.css') }}"/>
+    </head>
+    <body>
+        <div class="main_header">
+           <div class = "row header-manager">
+          <div class="profile text-white">
+            <div  class = "main-title col-sm-3">
+            <svg xmlns="http://www.w3.org/2000/svg">
+
+                  <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                  
+                      <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                  </filter>
+              </svg>
+           
+              <span filter-content="S" class = "title">TryCycle</span>
+       
+            </div>
+            <p class="textStyle col-sm-6"> Top-Up</p>
+            <div class = "header-contents col-sm-1">
+              <a href="{{ url_for('user') }}"> Profile</a>
+           </div>
+           <div class = "header-contents col-sm-1">
+                  <a href="{{ url_for('index') }}"> Logout</a>
+               </div>
+        </div>
+        </div>
+        <div>
+            <div class="left_panel">
+                <form action="/subscribe/" method="post">
+                <br/><p> Become a member of our Premium Group and enjoy our Premium Services.</p><br/>
+                <img src="{{ url_for('static',filename='premium.jpg') }}" style="width:200px;height:200px;"><br/>
+                <input type="submit" value="Click here to Upgrade" class="submit_upgrade" />
+                </form>
+
+            </div>
+            <div class="middle_panel">
+                <form action="/topUp_account/" method="post">
+                <label> Amount </label>
+                <input class="usernameStyle" type="number" name="amount"/>
+                <input type="submit" value="Top-up" class="submit_upgrade" />
+                </form>
+            </div>
+            <div class="right_panel">
+                <br/><br/><label> Balance </label><br/>
+                <h4> £ {{session['balance']}}</h4>
+            </div>
+        </div>
+    </body>
+</html>

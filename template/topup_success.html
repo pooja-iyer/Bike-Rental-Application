@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title> Top-up Success </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheet.css') }}"/>
+    </head>
+    <body class="center_panel">
+    <center>
+        <div>
+            <img src="{{ url_for('static',filename='check.jpg') }}" style="width:200px;height:200px;"/>
+        </div>
+        <br/>
+        <div>
+            <p> <h4> Top - Up Successfull </h4></p>
+        </div>
+        <div>
+            <a href="{{ url_for('user') }}">
+                <input type="submit" value="Back to Profile" class="submit_upgrade" />
+            </a>&nbsp;&nbsp;
+            <a href="{{ url_for('rent') }}">
+                <input type="submit" value="Rent a Bike" class="submit_upgrade" />
+            </a>
+        </div>
+    </center>
+    </body>
+</html>

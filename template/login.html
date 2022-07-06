@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Trycycle</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    </head>
+    <body class="login_bg">
+    <div class="logo_center">
+            <img src="{{ url_for('static', filename='logo.png') }}" style="width:175px;height:165px;">
+            <p class="textStyleLogo">TryCycle</p></div>
+        <div class="boxed_login">
+            <p class="loginStyle" align="center">LOGIN</p>
+                <div class="msg">{{ msg }}</div>
+                <form class="loginPage" action="/login/" method="post">
+                    <input class="usernameStyle" name="username" type="text" align="center" placeholder="Username"/>
+                    <input class="usernameStyle" name="password" type="password" align="center" placeholder="Password"/>
+                    <input type="submit" value="Sign in" class="submit" align="center"></input>
+                    <p class="forgot" align="center"><a href="{{ url_for('security') }}">Forgot Password?</a></p>
+                    <p class="forgot" align="center">New User? <a href="{{ url_for('register') }}">Register here</a></p>
+                </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title> Premium User success </title> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='stylesheet.css') }}">
+    </head>
+    <body >
+        <div class="main_header">
+         <div class = "row header-manager">
+          <div class="profile text-white">
+            <div  class = "main-title col-sm-9">
+            <svg xmlns="http://www.w3.org/2000/svg">
+
+                  <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                  
+                      <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                  </filter>
+              </svg>
+           
+              <span filter-content="S" class = "title">TryCycle</span>
+       
+            </div>
+            <div class = "header-contents col-sm-1">
+              <a href="{{ url_for('user') }}"> Profile</a>
+           </div>
+           <div class = "header-contents col-sm-1">
+                  <a href="{{ url_for('index') }}"> Logout</a>
+               </div>
+        </div>
+        </div>
+        </div>
+        <marquee width="100%" direction="left" height="200px" scrollamount="20" class="center_align">
+           <p class="textStyle_upgrade">Congratulations!! You are now a Premium Member of our Family!!!</p>
+        </marquee><br/><br/><br/>
+         <img  class="center_align" src="{{ url_for('static',filename='Thumbsup.gif') }}" width="250" >
+   
+    </body>
+    </html>
+

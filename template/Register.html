@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> New User </title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+    </head>
+    <body class="register_bg">
+        <div class="boxed_register">
+        <p class="loginStyle" align="center">REGISTER</p>
+        
+        <div class="msg">{{ msg }}</div>
+        <form action="/register/" method="post">
+            <input class="usernameStyle" type="text" name="username" align="center" placeholder="Username"/>
+            <input class="usernameStyle" name="password" type="password" align="center" placeholder="Password"/>
+            <input class="usernameStyle" type="number" name="phone" align="center" placeholder="Phone Number"/>
+            <input class="usernameStyle" type="text" name="pincode" align="center" placeholder="Post Code"/>
+            <select class="usernameStyle" name="Secret_Question" label="Secret Question">
+                <option value="None">Select a Secret Question </option>
+                <option value="1"> What's your First pet name?</option>
+                <option value="2"> What's your best Friend's name? </option>
+            </select>
+            <input class="usernameStyle" type="text" name="secret_answer" align="center" placeholder="Answer"/>
+            <input type="submit" value="Sign Up" class="submit" align="center"/>
+        </form>
+        </div>
+    </body>
+</html>

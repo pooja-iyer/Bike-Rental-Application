@@ -1,0 +1,136 @@
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/profile.css') }}">
+</head>
+<body>
+            <div>
+                <div class="col-sm-12">
+                        <div class="row m-b-25">
+                            <div class="col-sm-12 profile-top">
+                                <div class="profile text-white">
+                                    <div class = "main-title col-sm-11">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+  
+                                        <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+                                    
+                                          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                                            
+                                            <!-- We only want horizontal blurring. x: 100, y: 0 -->
+                                         
+                                            
+                                              <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                                          </filter>
+                                      </svg>
+                                      
+                                      <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+                                      
+                                      <span filter-content="S" class = "title">TryCycle</span>
+                                    <!-- <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h6 class="profile_details">{{session["Name"]}}</h6>
+                                    {% block content %}
+                                    {% if session["is_premium"] == 1 %}
+                                    <p class= "premium">Premium</p> 
+                                    {% else %}
+                                    <a  href="{{ url_for('subscribe') }}" class = "subscribe">Subscribe</a> 
+                                    {% endif %}
+                                    {% endblock content %}
+                                    <br />
+                                    <button type="button" class="btn btn-danger">Top Up</button>
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
+                                </div>
+                               
+                                    <div class = "header-contents col-sm-1">
+                                        <div class = "col-sm-6">
+                                           <a href="{{ url_for('logout') }}"> Logout</a>
+                                           </div>
+                                        </div>
+                                </div>
+                            </div>
+                            
+                         
+                        </div>
+                        
+                        <div class = "row home">
+                            <h3 class = "m-b-25">You are now logged in as operator:{{session["Name"]}}!</h3>
+                              <div class="msg" >{{ msg }}</div>
+                        <!-- <div class = "col-md-4 col-sm-12">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="{{url_for('static', filename='rent.jpg')}}" alt="Card image cap">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <a href="" class="btn btn-primary">Rent a Bike</a>
+                                </div>
+                              </div>
+                            </div> -->
+                            <div class = "col-md-3 col-sm-12">
+                                <div class="card" style="width: 25rem; cursor: pointer;">
+                                    <img class="card-img-top" src="{{url_for('static', filename='rent.jpg')}}" alt="Card image cap">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Track a bike </h5>
+                                      <p class="card-text">Track the bike stations that the bike is located in.</p>
+                                      <a href="{{ url_for('trickbike')}}" class="btn btn-primary anchor-btns">Track 
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                      </svg> -->
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class = "col-md-3 col-sm-12">
+                                    <div class="card" style="width: 25rem; cursor:pointer">
+                                        <img class="card-img-top" src="{{url_for('static', filename='park.jpg')}}" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h5 class="card-title">Repair the bike</h5>
+                                          <p class="card-text">Check to see the defective bikes and repair them.</p>
+                                          <a href="{{ url_for('repirebike')}}" class="btn btn-primary anchor-btns">Repair
+                                              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                          </svg> -->
+                                        </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class = "col-md-3 col-sm-12">
+                                        <div class="card" style="width: 25rem;cursor:pointer;">
+                                            <img class="card-img-top" src="{{url_for('static', filename='repair.jpg')}}" alt="Card image cap">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Move a bike</h5>
+                                              <p class="card-text">Move bikes between bike stations.</p>
+                                              <a href="{{ url_for('movelist')}}" class="btn btn-primary anchor-btns">Move
+                                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                              </svg> -->
+                                            </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                            <div class = "col-md-3 col-sm-12">
+                                                <div class="card" style="width: 25rem;cursor:pointer;">
+                                                    <img class="card-img-top" src="{{url_for('static', filename='Add.jpg')}}" alt="Card image cap">
+                                                    <div class="card-body">
+                                                      <h5 class="card-title">Add a bike</h5>
+                                                      <p class="card-text">Add new bikes to a bike station.</p>
+                                                      <a href="{{ url_for('addbike')}}" class="btn btn-primary anchor-btns">Add
+                                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                                                      </svg> -->
+                                                    </a>
+                                                    </div>
+                                                  </div>
+                                                </div>   
+                                          
+                                  
+                    
+                </div>
+                </div>
+            </div>
+       
+
+
+</body>

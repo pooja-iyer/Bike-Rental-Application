@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/profile.css') }}">
+</head>
+<body>
+            <div>
+                <div class="col-sm-12">
+                        <div class="row m-b-25">
+                            <div class="col-sm-12 profile-top">
+                                <div class="profile text-white">
+                                    <div class = "main-title col-sm-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+  
+                                        <!-- filterUnits is required to prevent clipping the blur outside the viewBox -->
+                                    
+                                          <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                                            
+                                            <!-- We only want horizontal blurring. x: 100, y: 0 -->
+                                         
+                                            
+                                              <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                                          </filter>
+                                      </svg>
+                                      
+                                      <!-- We use a custom attribute to set the text that the pseudo element should display and blur. In this case, we use the first character of the word. -->
+                                      
+                                      <span filter-content="S" class = "title">TryCycle</span>
+                                    <!-- <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                    <h6 class="profile_details">{{session["Name"]}}</h6>
+                                    {% block content %}
+                                    {% if session["is_premium"] == 1 %}
+                                    <p class= "premium">Premium</p> 
+                                    {% else %}
+                                    <a  href="{{ url_for('subscribe') }}" class = "subscribe">Subscribe</a> 
+                                    {% endif %}
+                                    {% endblock content %}
+                                    <br />
+                                    <button type="button" class="btn btn-danger">Top Up</button>
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
+                                </div>
+                                <div class = "header-contents col-sm-1">
+                                       <a href="{{ url_for('user') }}"> Profile</a>
+                                    </div>
+                                    <div class = "header-contents col-sm-1">
+                                        <div class = "col-sm-6">
+                                           <a href="{{ url_for('logout') }}"> Logout</a>
+                                           </div>
+                                        </div>
+                                </div>
+                            </div>
+                            
+                          
+
+
+                        </div>
+                        <a href="{{ url_for('O_home') }}" class="btn btn-primary">Back</a> 
+                        <div class = "row home">
+                        
+                            <div class = "col-12">
+                             <div class = "list-card">
+                                <br />
+                             <h4 class = "p-l-40">These are unreported intact movable bicycle and it current station</h4>
+                            {%for i in range(0, tot2)%}
+                            <form action="{{ url_for('movetoanstation',bike_id=data2[i]['BIKE_ID']) }}" method = "post"> 
+                            <div class = "m-b-25 bike-list">
+                                <p class = "bike_id" id = "bike_id" >{{data2[i]['BIKE_ID']}}</p>
+                                <p class = "bike_loc" id = "bike_loc" >{{data3[i]}}</p>
+                                <input type="hidden" name="bike_id" value="{{data2[i]['BIKE_ID']}}">
+                                <input type="submit" value="move" class = "btn btn-primary"></p>
+                                </div>
+                                <hr />
+                            </form>
+                            {%endfor%}  
+                            </div>                      
+                            </div>
+                        </div> 
+                                                                    
+                                  
+                    
+                </div>
+                </div>
+            </div>
+       
+
+
+</body>

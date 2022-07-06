@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title> Defects report </title> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stylesheet.css') }}"/>
+    </head>
+    <script src="{{ url_for('static',filename='chart.js') }}"></script>
+    <body>
+        <div class="main_header">
+            <div class = "row header-manager">
+          <div class="profile text-white">
+            <div  class = "main-title col-sm-3">
+            <svg xmlns="http://www.w3.org/2000/svg">
+
+                  <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                  
+                      <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
+                  </filter>
+              </svg>
+           
+              <span filter-content="S" class = "title">TryCycle</span>
+       
+            </div>
+            <p class="textStyle col-sm-6"> Defects Report</p>
+            
+           <div class = "header-contents col-sm-1">
+                  <a href="{{ url_for('index') }}"> Logout</a>
+               </div>
+        </div>
+        </div><br/>
+        <div>
+        <div class="canvas_style" style="width: 800px; height:800px;position:absolute;left:400;top:200;"> 
+            <canvas id="myChart" />
+            <script>
+                new Chart("myChart", {
+                            type: "line",
+                            data: {
+                                labels: ["Sept","Oct","Nov","Dec"],
+                                datasets: [{
+                                    label: "Defects per month",
+                                    data: [{% for item in label %}
+                                           {{label[item]}},
+                                           {% endfor %}], 
+                                    fill: false,
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    tension: 0.1
+                                }]
+                            },
+                            options: {
+                            legend: {display: false},
+                            responsive: true,
+                            scales: {
+                                xAxes: [ {
+                                      display: true,
+                                      scaleLabel: {
+                                        display: true,
+                                        labelString: "Months"
+                                      }
+                                    } ],
+                                yAxes: [ {
+                                  display: true,
+                                  scaleLabel: {
+                                    display: true,
+                                    labelString: "Defects Recoreded (inprogress and repaired included)"
+                                  },
+                                  ticks: {
+                                    beginAtZero: true,
+                                    steps:5,
+                                    stepValue: 5,
+                                }
+                            } ]
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div style="position:absolute; top:700;left:600">
+        <a href="{{ url_for('M_home') }}">
+            <input type="submit" value="Back" class="submit" />
+        </a></div>
+    </body>
+    <!--labels: [{% for item in label %}
+                                           {{item}},
+                                           {% endfor %}],
+                                           labels: ["Sept","Oct","Nov","Dec"],-->
+</html>
