@@ -1,0 +1,241 @@
+body {
+    background-color: #f9f9fa
+}
+
+.profile-top{
+    background: linear-gradient(to right, #009ffd, #2a2a72)
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.profile {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+.img-radius {
+    border-radius: 5px
+}
+
+h6{
+    font-size: 18px;
+}
+.profile a{
+    line-height: 25px
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.profile_details{
+    color:white;
+    font-size: 25px;
+}
+.subscribe{
+    display: inline-block;
+    width: 100px;
+    padding: 8px;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+  
+a{
+    cursor: pointer;
+    margin: 0 0 10px;
+
+}
+.subscribe:hover{
+    color:#fff;
+    text-decoration: none;
+}
+.premium{
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: -5px;
+
+}
+.card-img-top{
+    height:250px;   
+    width:280px;
+}
+.anchor-btns{
+    width:75px;
+    display: flex;  
+    align-items: center;
+
+}
+
+span {
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    color: white;
+    }
+    
+
+  
+  span:before {
+    position: absolute;
+    left: 1;
+    top: 2;
+    content: attr(filter-content);
+    filter: url(#motion-blur-filter);
+    color: black;
+    font-weight: 600;
+    }
+  
+  
+  svg {
+    display: none;
+  }
+  .header-contents{
+      top:8px;
+  }
+  .header-contents a{
+color:white;
+  }
+ .card:hover{
+    width: 300px;
+}
+.fields{
+    display: flex;
+    justify-content: center;
+}
+.input:focus {
+    outline: none !important;
+    background: #2a2a72;
+    border:1px solid  ;
+    box-shadow: 0 0 10px #719ECE;
+  }
+
+  .list-card{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+    background-color: gainsboro;
+    border-radius: 3px;
+    width: 80%;
+    display:block;
+    margin: 0 auto; 
+    float: none; 
+
+  }
+  .bike-list{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .bike_id{
+    font-size: 16px;
+  }
+
+  .history-card{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 3px;
+    width: 95%;
+    display:block;
+    margin: 0 auto; 
+    float: none; 
+
+  }
+  .back-button-profile{
+    float: left;
+    font-weight: 600;
+    color: white;
+    }
+
+.back-button-others{
+    float: left;
+    font-weight: 600;
+    color: black;
+    }
+    
+select{
+    height: 25px;
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #0539f7, #8aa3ff);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+}
+
+
+ .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background: linear-gradient(to right, #0539f7, #8aa3ff) !important;
+    border-radius: 20px !important;
+    height: 36px !important;
+    width: 83px !important;
+}
+    
+.msg{
+	color:red;
+	font-size:15px;
+}
+  
